@@ -1,8 +1,10 @@
+//rotas dinamicas
+
 import { useState } from "react"
 
 
 
-export default function form() {
+export default function Form() {
     const [nome, setNome] = useState("")
     const [idade, setIdade] = useState(0)
     const [usuarios, setUsuarios] = useState([])
@@ -38,13 +40,12 @@ export default function form() {
         height: "100vh"
         }}>
             <h1>F O R M - Integrando com a API #2</h1>
-            
-            <input type="text" value={nome} 
+            <div><input type="text" value={nome} 
             onChange={ e => setNome(e.target.value)}/>
             <input type="number" value={idade}
             onChange={e => setIdade(+e.target.value)}/>
-            <button onClick={salvarUsuario}>Enviar</button>
-
+            <button onClick={salvarUsuario} >Enviar</button>
+            </div>
             <ul> 
                 {renderizarUsuarios()}
             </ul>
